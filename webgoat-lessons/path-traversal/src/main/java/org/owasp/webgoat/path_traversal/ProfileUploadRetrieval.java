@@ -92,9 +92,9 @@ public class ProfileUploadRetrieval extends AssignmentEndpoint {
             }
             if (catPicture.exists()) {
                 return ResponseEntity.ok()
-                        .contentType(MediaType.parseMediaType(MediaType.IMAGE_JPEG_VALUE))
-                        .location(new URI("/PathTraversal/random-picture?id=" + catPicture.getName()))
-                        .body(StringUtils.arrayToCommaDelimitedString(catPicture.getParentFile().listFiles()).getBytes());
+                            .contentType(MediaType.parseMediaType(MediaType.IMAGE_JPEG_VALUE))
+                            .location(new URI("/PathTraversal/random-picture?id=" + catPicture.getName()))
+                            .body(Base64.getEncoder().encode(FileCopyUtils.copyToByteArray(catPicture)));
             }
            
         } catch (IOException | URISyntaxException e) {
