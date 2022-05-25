@@ -9,6 +9,7 @@
     <version>8.2.3-SNAPSHOT</version>
 
     
+    
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
